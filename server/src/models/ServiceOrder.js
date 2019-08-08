@@ -65,7 +65,7 @@ const ServiceOrder = new mongoose.Schema({
         type: Date,
         default: Date.now
     },
-    finalizada: {
+    finalizadaEm: {
         type: Date,
         required: false
     }
