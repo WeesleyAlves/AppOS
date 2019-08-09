@@ -24,7 +24,7 @@ module.exports = {
         return res.json(order);
     },
     async destroy (req, res) {
-        const order = await orders.findByIdAndDelete(req.params.id);
+        await orders.findByIdAndDelete(req.params.id);
 
         return res.send("Ordem de Serviço Deletada!");
     },

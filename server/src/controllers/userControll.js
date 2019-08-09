@@ -19,14 +19,14 @@ module.exports = {
         return res.json(user);
     },
     async destroy(req, res) {
-        const user = await users.findOneAndDelete(req.params.id);
+        await users.findOneAndDelete(req.params.id);
 
         return res.send("Usuario Deletado");
     },
     async show (req, res) {
-        const user = await users.findById(req.params.id);
+        const user = await users.find({ user : req.params.id });
 
-        return res.json(user);
+        return res.json(user[0]);
     },
 };
 

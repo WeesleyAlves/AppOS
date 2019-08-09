@@ -17,8 +17,24 @@ requireDir("./src/models");
 const user = mongoose.model("User");
 const serviceOrder = mongoose.model("ServiceOrder");
 
-app.use("/admin", require("./src/routes/admin"));
+app.use((req, res, next) => {
+	res.setHeader('Access-Control-Allow-Origin', '*')
+	res.setHeader('Access-Control-Allow-Methods', 'GET, PUT, POST, DELETE')
+	res.setHeader(
+		'Access-Control-Allow-Headers',
+		'Origin, X-Requested-With, Content-Type, Accept'
+	)
+	next()
+})
 
 app.use(cors());
+
+app.use("/admin", require("./src/routes/admin"));
+app.use("/login", require("./src/routes/login"));
+
+app.use(express.static("../client"));
+
+
+
 
 app.listen(3001);
