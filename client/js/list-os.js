@@ -15,7 +15,6 @@ var obterArray = function () {
             if(xhr.readyState == 4){
                 if(xhr.status == 200){
                     resolve(osArray = JSON.parse(xhr.response));
-                    console.log(osArray);
                 }else{
                     reject('Erro na Requisição');
                 }
@@ -39,6 +38,8 @@ function gerarList(tipo){
             }else if(osItem.statusOS=="Finalizada"){
                 os.style.backgroundColor = "#c2f3c3";
             }
+
+        os.setAttribute('onclick', 'detalhes("'+osArray.indexOf(osItem)+'")');
         
         
         if(tipo =="Em Aberto" || tipo =="Finalizada"){
@@ -99,14 +100,12 @@ function gerarList(tipo){
 
 obterArray()
     .then(function(response){
-        gerarList("todas");
+        gerarList("Em Aberto");
     })
     .catch(function(error){
         alert(error);
     });
 
 selectList.addEventListener('change', function(){
-    var value = this.value;
-
-    gerarList(value);
+    gerarList(this.value);
 });
