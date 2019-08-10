@@ -1,21 +1,49 @@
 #container-detail {
     max-width: 400px;
     min-width: 350px;
-    min-height: 500px;
+    min-height: 422px;
+    padding-bottom: 15px;
 }
 
 #content-os {
-    width: 90%;
-    
+    text-align: left;
+    padding: 15px 10px;
     margin: 10px;
     display: inline-block;
     border: 1px solid lightgrey;
     box-shadow: 0px 0px 3px;
+    display: none;
+    transition: 1s all;
+}
+
+.text-view{
+    font-size: 15px;
+    margin: 7px;
+}
+
+#nomeCliente-view{
+    font-size: 17px;
+    font-weight: 600;
+}
+
+#login-view{
+    display: inline-block;
+    font-weight: 600;
+}
+
+#senha-view {
+    display: inline-block;
+}
+
+#id-view{
+    font-size: 10px;
+    color: lightslategray
 }
 
 #container-buttons{
     text-align: right;
     padding: 0px 5px;
+    display: none;
 }
 
 .view-buttons {
@@ -54,6 +82,7 @@
     border-color: cornflowerblue;
     color: cornflowerblue;
     box-shadow: -1px 1px 2px cornflowerblue;
+    margin-right: 50%;
 }
 
 #btn-delete:active{

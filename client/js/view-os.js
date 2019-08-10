@@ -1,4 +1,10 @@
 var view = document.getElementById('content-os');
+var viewButtons = document.getElementById('container-buttons');
+
+var btnDelete = document.getElementById('btn-delete');
+var btnEdit = document.getElementById('btn-edit');
+var selectOS = document.getElementById('select-list');
+
 
 function detalhes(id){
     view.innerHTML="";
@@ -59,6 +65,10 @@ function detalhes(id){
     createdAt.setAttribute('class','text-view');
     createdAt.setAttribute('id','createdAt-view');
 
+    var _id = document.createElement('div');
+    _id.setAttribute('class','text-view');
+    _id.setAttribute('id','id-view');
+
     nomeCliente.appendChild(document.createTextNode(osArray[id].nomeCliente));
     endereco.appendChild(document.createTextNode(osArray[id].endereco));
     bairro.appendChild(document.createTextNode("Bairro: "+osArray[id].bairro));
@@ -69,10 +79,11 @@ function detalhes(id){
     plano.appendChild(document.createTextNode("Plano: "+osArray[id].plano));
     statusCliente.appendChild(document.createTextNode("Status: "+osArray[id].statusCliente));
     responsavel.appendChild(document.createTextNode("Responsavel: "+osArray[id].responsavel));
-    criador.appendChild(document.createTextNode("Aberto por: "+osArray[id].criador));
+    criador.appendChild(document.createTextNode("Aberta por: "+osArray[id].criador));
     solucao.appendChild(document.createTextNode("Solução: "+osArray[id].solucao));
     finalizadaEm.appendChild(document.createTextNode("Finalizada em: "+osArray[id].finalizadaEm));
     createdAt.appendChild(document.createTextNode("Aberta Em: "+osArray[id].createdAt));
+    _id.appendChild(document.createTextNode("ID: "+osArray[id]._id));
 
     view.appendChild(nomeCliente);
     view.appendChild(endereco);
@@ -88,7 +99,33 @@ function detalhes(id){
     view.appendChild(createdAt);
     view.appendChild(finalizadaEm);
     view.appendChild(solucao);
-    
-
-
+    view.appendChild(_id);
+    btnDelete.setAttribute('onclick', 'deleteOS("'+osArray[id]._id+'","'+selectOS.value+'")');
+    btnEdit.setAttribute('onclick', 'editOS("'+osArray[id]._id+'")');
+    view.style.display = "inline-block";
+    viewButtons.style.display = "block";
 }
+
+function deleteOS(id, lista) {
+    var xhr = new XMLHttpRequest();
+    var url = "http://localhost:3001/admin/order/";
+    xhr.open("DELETE", url+id, true);
+
+    xhr.onreadystatechange = function () {
+        if(xhr.readyState == 4){
+            if(xhr.status == 200){
+                obterArray()
+                    .then(function(response){
+                        gerarList(lista);
+                        alert('Ordem de Serviço Removida');
+                    })
+                    .catch(function(error){
+                        alert(error);
+                    });
+            }
+        }
+    }
+
+    xhr.send();
+}
+

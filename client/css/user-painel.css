@@ -1,0 +1,38 @@
+#container-user-info{
+    padding: 15px;
+    min-height: 100px;
+    text-align: center;
+}
+
+.button-user{
+    border: 1px solid;
+    border-radius: 3px;
+    padding: 10px;
+    max-width: 80%;
+    margin: 0 auto;
+    border-color: cornflowerblue;
+    color: cornflowerblue;
+    box-shadow: -1px 1px 2px cornflowerblue;
+    font-weight: 600;
+    transition: 0.2s;
+    font-size: 13px;
+    user-select: none;
+}
+
+.button-user:hover{
+    cursor: pointer;
+    background-color: cornflowerblue;
+    color: white;
+    box-shadow: -1px 1px 2px black;
+}
+
+.button-user:active{
+    position: relative;
+    top: 1px;
+    right: 1px;
+    box-shadow: none;
+}
+
+
+
+
