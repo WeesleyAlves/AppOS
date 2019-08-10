@@ -1,0 +1,112 @@
+var list = document.getElementById("os-list");
+var selectList = document.getElementById("select-list");
+
+var osArray = [];
+
+var url = "http://localhost:3001/admin/order"
+
+var obterArray = function () {
+    return new Promise(function(resolve, reject){
+        
+        var xhr = new XMLHttpRequest();
+        xhr.open('GET', url, true);
+
+        xhr.onreadystatechange = function () {
+            if(xhr.readyState == 4){
+                if(xhr.status == 200){
+                    resolve(osArray = JSON.parse(xhr.response));
+                    console.log(osArray);
+                }else{
+                    reject('Erro na Requisição');
+                }
+            }
+        }
+        xhr.send();
+    })
+}
+
+function gerarList(tipo){
+    osArray.sort(function(a, b) {
+        return a.createdAt > b.createdAt ? -1 : a.createdAt < b.createdAt ? 1 : 0;
+    });
+
+    list.innerHTML ="";
+
+    osArray.forEach(osItem => {
+        let os = document.createElement("li");
+            if(osItem.statusOS=="Em Aberto") {
+                os.style.backgroundColor = "#fbc9c9";
+            }else if(osItem.statusOS=="Finalizada"){
+                os.style.backgroundColor = "#c2f3c3";
+            }
+        
+        
+        if(tipo =="Em Aberto" || tipo =="Finalizada"){
+            if(osItem.statusOS==tipo){
+            os.setAttribute('class','order-li');
+
+            let titulo = document.createElement("div");
+            titulo.setAttribute('class','titulo-os');
+            
+            let endereco = document.createElement("div");
+            endereco.setAttribute('class','endereco-os');
+
+            let login = document.createElement("div");
+            login.setAttribute('class','login-os');
+            
+            let plano = document.createElement("div");
+            plano.setAttribute('class','plano-os');
+                        
+            titulo.appendChild( document.createTextNode("["+osItem.statusCliente+"] "+osItem.nomeCliente) );
+            endereco.appendChild( document.createTextNode(osItem.endereco) )
+            login.appendChild( document.createTextNode("Login: "+osItem.login) );
+            plano.appendChild( document.createTextNode("Plano: "+osItem.plano) );
+            os.appendChild(titulo);
+            os.appendChild(endereco);
+            os.appendChild(login);
+            os.appendChild(plano);
+
+            list.appendChild(os);
+            }
+        } else {
+            os.setAttribute('class','order-li');
+
+            let titulo = document.createElement("div");
+            titulo.setAttribute('class','titulo-os');
+            
+            let endereco = document.createElement("div");
+            endereco.setAttribute('class','endereco-os');
+
+            let login = document.createElement("div");
+            login.setAttribute('class','login-os');
+            
+            let plano = document.createElement("div");
+            plano.setAttribute('class','plano-os');
+                        
+            titulo.appendChild( document.createTextNode("["+osItem.statusCliente+"] "+osItem.nomeCliente) );
+            endereco.appendChild( document.createTextNode(osItem.endereco) )
+            login.appendChild( document.createTextNode("Login: "+osItem.login) );
+            plano.appendChild( document.createTextNode("Plano: "+osItem.plano) );
+            os.appendChild(titulo);
+            os.appendChild(endereco);
+            os.appendChild(login);
+            os.appendChild(plano);
+
+            list.appendChild(os);
+        }
+    });
+}
+
+obterArray()
+    .then(function(response){
+        gerarList("todas");
+    })
+    .catch(function(error){
+        alert(error);
+    });
+
+selectList.addEventListener('change', function(){
+    var value = this.value;
+
+    gerarList(value);
+});
