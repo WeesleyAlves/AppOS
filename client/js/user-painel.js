@@ -224,6 +224,7 @@ function newUserPainel() {
         painelDadosNewUser.style.display = 'none';
     }else{
         painelDadosNewUser.style.display = 'block';
+        painelDelUser.style.display = 'none';
     }
     
 }
@@ -231,6 +232,7 @@ function newUserPainel() {
 function delUserPainel() {
     if(painelDelUser.style.display == 'none'){
         painelDelUser.style.display = 'block';
+        painelDadosNewUser.style.display = 'none';
     }else{
         painelDelUser.style.display = 'none';
     }
