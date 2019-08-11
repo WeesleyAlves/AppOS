@@ -10,6 +10,7 @@
     padding: 10px;
     max-width: 80%;
     margin: 0 auto;
+    margin-bottom: 10px;
     border-color: cornflowerblue;
     color: cornflowerblue;
     box-shadow: -1px 1px 2px cornflowerblue;
@@ -80,8 +81,47 @@
     top:1px;
     right: 1px;
     box-shadow: none;
+}
 
+#del-user-painel{
+    min-height: 130px;
+}
+
+#select-del-user{
+    margin-top: 5px;
+    height: 30px;
+    width: 230px;
+}
+
+#button-del-user{
+    display: block;
+    border: 1px solid cornflowerblue;
+    border-radius: 3px;
+    color: white;
+    background-color: cornflowerblue;
+    font-weight: 600;
+    box-shadow: -1px 1px 2px black;
+    user-select: none;
+    width: 100px;
+    padding: 7px 1px;
+    text-align: center;
+    margin-top: 10px;
+    float: right;
+}
+
+#button-del-user:hover{
+    cursor: pointer;
+}
+
+#button-del-user:active{
+    position: relative;
+    top:1px;
+    right: 1px;
+    box-shadow: none;
 }
 
 
-
+h4 {
+    margin: 3px 0px 10px 0px;
+    text-align: center;
+}

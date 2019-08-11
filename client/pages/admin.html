@@ -21,7 +21,7 @@
                     <option value="Finalizada">Fechadas</option>
                     <option value="Todas">Todas</option>
                 </select>
-                <div class="button-plus">+</div>
+                <div class="button-plus" onclick="viewNewOS()">+</div>
             </div>
 
             <div id="container-list-os">
@@ -39,13 +39,23 @@
                 <div id="btn-delete" class="view-buttons">Excluir</div>
                 <div id="btn-edit" class="view-buttons">Editar</div>
             </div>
+
+            <div id="nothing">Nada aqui por enquanto ;D</div>
+
+            <div id="new-os">
+                <div id="content-new-os"></div>
+                <div id="btn-newOS" class="view-buttons" onclick="criarOS()">Criar</div>
+            </div>
+            
+
+            
+            
         </div>
 
         <div id="container-user-info" class="container">
             <h4>Controle de Usuarios</h4>
             <div class="button-user" id="btn-add-user" onclick="newUserPainel()">Novo Usuario</div>
-
-  
+            <div class="button-user" id="btn-add-user" onclick="delUserPainel()">Excluir Usuario</div>
         </div>
     </div>
     

@@ -88,3 +88,90 @@
 #btn-delete:active{
     box-shadow: none;
 }
+
+#nothing{
+    margin: auto;
+    color: lightslategrey;
+    font-weight: 700;
+    margin: 200px 10px;
+    user-select: none;
+}
+
+#new-os{
+    text-align: left;
+    padding: 15px 10px;
+    margin: 10px;
+    display: inline-block;
+    border: 1px solid lightgrey;
+    box-shadow: 0px 0px 3px;
+    display: none;
+    transition: 1s all;
+    font-size: 12px;
+}
+
+.select-new-os{
+    margin: 2px 0px 7px 0px;
+    height: 20px;
+    width: 300px;
+    padding: 3px 5px;
+    font-size: 14px; 
+}
+
+#newLogin{
+    width: 80px;
+    margin-left: 5px;
+    margin-right: 15px;
+    margin-bottom: 5px;
+    margin-top: 5px;
+}
+
+#newSenha{
+    width: 80px;
+    margin-left: 5px;
+    margin-right: 15px;
+    margin-bottom: 5px;
+    margin-top: 5px;
+}
+
+#newPlano{
+    width: 80px;
+    margin-left: 5px;
+    margin-right: 15px;
+    margin-bottom: 5px;
+    margin-top: 5px;
+}
+
+#newStatus{
+    width: 80px;
+    margin-left: 5px;
+    margin-right: 15px;
+    margin-bottom: 5px;
+    margin-top: 5px;
+}
+
+#newResponsavel{
+    width: 212px;
+    margin-left: 5px;
+    margin-right: 15px;
+    margin-bottom: 5px;
+    margin-top: 5px;
+}
+
+#btn-newOS{
+    background-color: cornflowerblue;
+    color: white;
+    border-color: cornflowerblue;
+    box-shadow: -1px 1px 2px black;
+    margin-top: 5px;
+    margin-left: 236px;
+    font-size: 15px;
+    font-weight: 600;
+}
+#btn-newOS:active{
+    box-shadow: none;
+}
+
+h4 {
+    margin: 3px 0px 3px 0px;
+    text-align: center;
+}

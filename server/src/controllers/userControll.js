@@ -19,7 +19,7 @@ module.exports = {
         return res.json(user);
     },
     async destroy(req, res) {
-        await users.findOneAndDelete(req.params.id);
+        await users.findOneAndDelete({nome : req.params.id});
 
         return res.send("Usuario Deletado");
     },

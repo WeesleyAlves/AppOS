@@ -25,8 +25,10 @@ function logar() {
                 var user = JSON.parse(xhr.response);
 
                     if(user.pass==inputPass.value){
+
+                        window.localStorage.setItem('user', user.nome);
                         if(user.type=="admin"){
-                            window.location.replace("../pages/admin.html");
+                            window.location.replace("./pages/admin.html");
                         };
                     }else{
                         alert("Usuario ou senha incorretos!");
