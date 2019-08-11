@@ -117,6 +117,9 @@ function deleteOS(id, lista) {
                 obterArray()
                     .then(function(response){
                         gerarList(lista);
+                        view.innerHTML="";
+                        view.style.display="none";
+                        viewButtons.style.display="none";
                         alert('Ordem de Serviço Removida');
                     })
                     .catch(function(error){

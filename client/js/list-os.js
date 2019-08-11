@@ -21,7 +21,7 @@ var obterArray = function () {
             }
         }
         xhr.send();
-    })
+    });
 }
 
 function gerarList(tipo){
