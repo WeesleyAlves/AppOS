@@ -5,6 +5,26 @@ html, body{
     font-family: Verdana, Geneva, Tahoma, sans-serif
 }
 
+header{
+    background-color: lightsteelblue;
+    text-align: right;
+    padding: 5px 20px;
+    color: white;    
+}
+
+#logoff{
+    display: inline-block;
+    border: 1px solid white;
+    padding: 5px 10px;;
+}
+
+#logoff:hover{
+    background-color: black;
+    color: white;
+    transition: 0.2s all;
+    cursor: pointer;
+}
+
 #container-geral {
     max-width: 1000px;
     min-width: 500px;
