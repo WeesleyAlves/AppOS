@@ -8,7 +8,7 @@ const app = express();
 app.use(express.json());
 
 mongoose.connect(
-    'mongodb://localhost:27017/AppOS',
+    'mongodb://app:appos123@ds263927.mlab.com:63927/heroku_w8mxcnc5',
     { useNewUrlParser: true }
 );
 
