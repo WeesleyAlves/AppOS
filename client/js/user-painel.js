@@ -59,7 +59,7 @@ container.appendChild(painelDadosNewUser);
 var newUser = function(newUser) {
     return new Promise(function(resolve, reject){
         var xhr = new XMLHttpRequest();
-        var url = "http://localhost:3001/admin/user";
+        var url = "https://appsinaltelecom.herokuapp.com/admin/user";
         var data = JSON.stringify(newUser);
 
         xhr.open("POST", url);
@@ -133,7 +133,7 @@ var allUsers = [];
 var arrayUsers = function(){
     return new Promise(function(resolve, reject){
         var xhr = new XMLHttpRequest();
-        var url = "http://localhost:3001/admin/";
+        var url = "https://appsinaltelecom.herokuapp.com/admin/";
 
         xhr.open("GET", url+"allUsers", true);
 
@@ -158,7 +158,7 @@ var arrayUsers = function(){
 var delUser = function(nome) {
     return new Promise(function(resolve, reject){
         var xhr = new XMLHttpRequest();
-        var url = "http://localhost:3001/admin/user/"+nome;
+        var url = "https://appsinaltelecom.herokuapp.com/admin/user/"+nome;
 
         xhr.open("DELETE", url, true);
 

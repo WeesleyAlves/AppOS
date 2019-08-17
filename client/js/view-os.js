@@ -113,7 +113,7 @@ function detalhes(id){
 
 function deleteOS(id, lista) {
     var xhr = new XMLHttpRequest();
-    var url = "http://localhost:3001/admin/order/";
+    var url = "https://appsinaltelecom.herokuapp.com/admin/order/";
     xhr.open("DELETE", url+id, true);
 
     xhr.onreadystatechange = function () {
@@ -245,7 +245,7 @@ function viewNewOS() {
 var lancaNovaOs = function(data){
     return new Promise(function(resolve, reject){
         var xhr = new XMLHttpRequest();
-        var url = "http://localhost:3001/admin/order";
+        var url = "https://appsinaltelecom.herokuapp.com/admin/order";
 
         xhr.open('POST', url, true);
         xhr.setRequestHeader("Content-Type","application/json");

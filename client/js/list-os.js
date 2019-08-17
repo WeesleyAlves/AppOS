@@ -3,7 +3,7 @@ var selectList = document.getElementById("select-list");
 
 var osArray = [];
 
-var url = "http://localhost:3001/admin/order"
+var url = "https://appsinaltelecom.herokuapp.com/admin/order"
 
 var obterArray = function () {
     return new Promise(function(resolve, reject){

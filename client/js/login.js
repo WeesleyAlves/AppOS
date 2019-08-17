@@ -6,7 +6,7 @@ buttonLogin.setAttribute("onclick","logar()");
 
 
 var xhr = new XMLHttpRequest();
-var url = "http://localhost:3001/login/";
+var url = "https://appsinaltelecom.herokuapp.com/login/";
 
 function logar() {
 
