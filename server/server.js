@@ -33,7 +33,7 @@ app.use(cors());
 app.use("/admin", require("./src/routes/admin"));
 app.use("/login", require("./src/routes/login"));
 
-app.use(express.static("../client"));
+app.use(express.static("./client"));
 
 
 
