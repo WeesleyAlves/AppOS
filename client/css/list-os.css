@@ -13,7 +13,7 @@
 
 #select-list {
     height: 30px;
-    width: 75%;
+    width: 60%;
     padding-left: 5px;
     float: left;
     margin-left: 15px; 
@@ -41,6 +41,15 @@
 .button-plus:active{
     position: relative;
     top: 1px;
+}
+
+#border-button-plus{
+    margin-right: 5px;
+}
+
+#refresh-icon{
+    margin: 5px auto;
+    width: 18px;
 }
 
 #os-list {
@@ -84,4 +93,40 @@
     font-weight: 600;
     overflow: hidden;
     white-space: nowrap;
+}
+#container-search{
+    margin-bottom: 15px;
+}
+
+#input-search {
+    margin: 0;
+    display: inline-block;
+    height: 20px;
+    width: 60%;
+    padding-left: 5px;
+}
+
+#button-search{
+    display: inline-block;
+    font-size: 12px;
+    color: black;
+    border: 1px solid lightslategrey;
+    border-radius: 3px;
+    padding: 5px 10px;
+    user-select: none;
+    float: right;
+    margin-right: 10px;
+    transition: 0.2s all;
+}
+
+#button-search:hover{
+    color: white;
+    cursor: pointer;
+    background-color: cornflowerblue;
+}
+
+#button-search:active{
+    position: relative;
+    top: 1px;
+    right: 1px;
 }

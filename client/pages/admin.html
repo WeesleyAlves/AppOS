@@ -26,12 +26,17 @@
                     <option value="Todas">Todas</option>
                 </select>
                 <div class="button-plus" onclick="viewNewOS()">+</div>
+            <div class="button-plus" id="border-button-plus" onclick="reloadOsList()"><img id="refresh-icon" src="../img/refresh.png"></div>
             </div>
 
             <div id="container-list-os">
-                <ul id=os-list>
-                    
+                <ul id=os-list>  
                 </ul>
+            </div>
+
+            <div id="container-search">
+                <input type="text" id="input-search" placeholder="Procurar Login">
+                <div id="button-search" onclick="buscarCliente()">Buscar</div>
             </div>
         </div>
 

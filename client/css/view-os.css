@@ -1,5 +1,5 @@
 #container-detail {
-    max-width: 400px;
+    max-width: 390px;
     min-width: 350px;
     min-height: 422px;
     padding-bottom: 15px;
@@ -74,6 +74,11 @@
     box-shadow: -1px 1px 2px black;
 }
 
+#btn-edit:hover{
+    background-color: #2364da;
+    border-color: #2364da
+}
+
 #btn-edit:active{
     box-shadow: none;
 }
@@ -83,6 +88,13 @@
     color: cornflowerblue;
     box-shadow: -1px 1px 2px cornflowerblue;
     margin-right: 50%;
+}
+
+#btn-delete:hover{
+    background-color: red;
+    border-color: red;
+    color: white;
+    box-shadow: -1px 1px 2px black;
 }
 
 #btn-delete:active{
