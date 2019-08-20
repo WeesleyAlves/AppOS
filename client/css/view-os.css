@@ -14,6 +14,7 @@
     box-shadow: 0px 0px 3px;
     display: none;
     transition: 1s all;
+    font-size: 12px;
 }
 
 .text-view{
@@ -170,15 +171,20 @@
 }
 
 #btn-newOS{
+    margin-top: 5px;
+    position: relative;
+    left: 75%;
     background-color: cornflowerblue;
     color: white;
     border-color: cornflowerblue;
     box-shadow: -1px 1px 2px black;
-    margin-top: 5px;
-    margin-left: 236px;
-    font-size: 15px;
-    font-weight: 600;
 }
+
+#btn-newOS:hover{
+    background-color: #2364da;
+    border-color: #2364da
+}
+
 #btn-newOS:active{
     box-shadow: none;
 }
@@ -186,4 +192,46 @@
 h4 {
     margin: 3px 0px 3px 0px;
     text-align: center;
+}
+
+#container-buttons-edit{
+    text-align: right;
+    padding: 0px 5px;
+    display: none;
+    width: 100%;
+}
+
+#btn-post{
+    background-color: cornflowerblue;
+    color: white;
+    border-color: cornflowerblue;
+    box-shadow: -1px 1px 2px black;
+    margin-right: 23px;
+}
+
+#btn-post:hover{
+    background-color: #2364da;
+    border-color: #2364da
+}
+
+#btn-post:active{
+    box-shadow: none;
+}
+
+#btn-cancel {
+    border-color: cornflowerblue;
+    color: cornflowerblue;
+    box-shadow: -1px 1px 2px cornflowerblue;
+    margin-right: 45%;
+}
+
+#btn-cancel:hover{
+    background-color: red;
+    border-color: red;
+    color: white;
+    box-shadow: -1px 1px 2px black;
+}
+
+#btn-cancel:active{
+    box-shadow: none;
 }

@@ -9,6 +9,7 @@ var nothing = document.getElementById('nothing');
 
 
 function detalhes(id){
+    viewEditBtn.style.display="none";
     newOS.style.display='none';
     view.innerHTML="";
 
@@ -104,7 +105,7 @@ function detalhes(id){
     view.appendChild(solucao);
     view.appendChild(_id);
     btnDelete.setAttribute('onclick', 'deleteOS("'+osArray[id]._id+'","'+selectOS.value+'")');
-    btnEdit.setAttribute('onclick', 'editOS("'+osArray[id]._id+'")');
+    btnEdit.setAttribute('onclick', 'editOS("'+id+'")');
     view.style.display = "inline-block";
     viewButtons.style.display = "block";
 
@@ -233,6 +234,7 @@ contentNewOs.appendChild(newResponsavel);
 contentNewOs.appendChild(document.createElement('br'));
 
 function viewNewOS() { 
+        viewEditBtn.style.display="none";
         nothing.style.display='none';
         view.innerHTML="";
         view.style.display="none";
@@ -312,6 +314,194 @@ function criarOS(){
         .catch(function(error){
             alert(error);
         });
-
     
 }
+
+var viewEditBtn = document.getElementById("container-buttons-edit");
+var btnCancel = document.getElementById("btn-cancel");
+var btnConcluir = document.getElementById("btn-post");
+
+
+var editNome = document.createElement('input');
+var editEnd = document.createElement('input');
+var editBairro = document.createElement('input');
+var editRef = document.createElement('input');
+var editComodato = document.createElement('input');
+var editLogin = document.createElement('input');
+var editSenha = document.createElement('input');
+var editPlano = document.createElement('input');
+var editStatus = document.createElement('input');
+var editResponsavel = document.createElement('input');
+
+function editOS(id){
+    view.innerHTML="";
+    viewButtons.style.display="none";
+
+    var labelEditOS = document.createElement('h4');
+    labelEditOS.innerHTML = 'Editar OS';
+
+    
+    editNome.setAttribute('class','select-new-os');
+    editNome.setAttribute('id','editNome');
+    editNome.value=osArray[id].nomeCliente;
+
+    
+    editEnd.setAttribute('class','select-new-os');
+    editEnd.setAttribute('id','editEnd');
+    editEnd.value = osArray[id].endereco;
+
+    
+    editBairro.setAttribute('class','select-new-os');
+    editBairro.setAttribute('id','editBairro');
+    editBairro.value = osArray[id].bairro;
+
+    
+    editRef.setAttribute('class','select-new-os');
+    editRef.setAttribute('id','editRef');
+    editRef.value=osArray[id].ref;
+
+    
+    editComodato.setAttribute('class','select-new-os');
+    editComodato.setAttribute('id','editComodato');
+    editComodato.value=osArray[id].comodato;
+
+    
+    editLogin.setAttribute('class','select-new-os');
+    editLogin.setAttribute('id','editLogin');
+    editLogin.value = osArray[id].login;
+
+    
+    editSenha.setAttribute('class','select-new-os');
+    editSenha.setAttribute('id','editSenha');
+    editSenha.value = osArray[id].senha;
+
+    
+    editPlano.setAttribute('class','select-new-os');
+    editPlano.setAttribute('id','editPlano');
+    editPlano.value = osArray[id].plano;
+
+    
+    editStatus.setAttribute('class','select-new-os');
+    editStatus.setAttribute('id','editStatus');
+    editStatus.value = osArray[id].statusCliente;
+
+   
+    editResponsavel.setAttribute('class','select-new-os');
+    editResponsavel.setAttribute('id','editResponsavel');
+    editResponsavel.value = osArray[id].responsavel;
+
+    view.appendChild(labelEditOS);
+
+    view.appendChild(document.createTextNode('Nome:'));
+    view.appendChild(document.createElement('br'));
+    view.appendChild(editNome);
+    view.appendChild(document.createElement('br'));
+
+    view.appendChild(document.createTextNode('Endereço:'));
+    view.appendChild(document.createElement('br'));
+    view.appendChild(editEnd);
+    view.appendChild(document.createElement('br'));
+
+    view.appendChild(document.createTextNode('Bairro:'));
+    view.appendChild(document.createElement('br'));
+    view.appendChild(editBairro);
+    view.appendChild(document.createElement('br'));
+
+    view.appendChild(document.createTextNode('Referencia:'));
+    view.appendChild(document.createElement('br'));
+    view.appendChild(editRef);
+    view.appendChild(document.createElement('br'));
+
+    view.appendChild(document.createTextNode('Comodato:'));
+    view.appendChild(document.createElement('br'));
+    view.appendChild(editComodato);
+    view.appendChild(document.createElement('br'));
+
+    view.appendChild(document.createTextNode('Login:'));
+    view.appendChild(editLogin);
+
+    view.appendChild(document.createTextNode('Senha:'));
+    view.appendChild(editSenha);
+    view.appendChild(document.createElement('br'));
+
+    view.appendChild(document.createTextNode('Plano:'));
+    view.appendChild(editPlano);
+
+    view.appendChild(document.createTextNode('Status:'));
+    view.appendChild(editStatus);
+    view.appendChild(document.createElement('br'));
+
+    view.appendChild(document.createTextNode('Responsavel:'));
+    view.appendChild(editResponsavel);
+    view.appendChild(document.createElement('br'));
+
+    
+    
+    
+    btnCancel.setAttribute("onclick","detalhes("+id+")");
+
+    
+
+    btnConcluir.setAttribute("onclick","gerarArrayEdit('"+osArray[id]._id+"','"+id+"')");
+
+    
+    viewEditBtn.style.display="inline-block";
+
+}
+
+var updateOS = function(id, array){
+    return new Promise(function(resolve, reject){
+        var xhr = new XMLHttpRequest();
+        var url = "https://appsinaltelecom.herokuapp.com/admin/order/"+id;
+
+        xhr.open("PUT", url, true);
+        xhr.setRequestHeader('Content-type','application/json');
+
+        xhr.onreadystatechange = function () {
+            if(xhr.readyState==4){
+                if(xhr.status==200){
+                    resolve('Editado com sucesso');
+                }else{
+                    reject('Falha ao editar');
+                }
+            }
+        }
+
+        xhr.send(JSON.stringify(array));
+    });
+};
+
+function gerarArrayEdit(id, idArray) {
+        var data = {
+            "nomeCliente" : editNome.value,
+            "endereco" : editEnd.value,
+            "bairro" : editBairro.value,
+            "ref" : editRef.value,
+            "comodato" : editComodato.value,
+            "login" : editLogin.value,
+            "senha" : editSenha.value,
+            "plano" : editPlano.value,
+            "statusCliente" : editStatus.value,
+            "responsavel" : editResponsavel.value
+        }
+
+        updateOS(id, data)
+            .then(function(response){
+                alert(response);
+                
+                obterArray()
+                    .then(function(response){
+                        gerarList("Em Aberto");
+                        detalhes(idArray);
+                    })
+                    .catch(function(error){
+                        alert(error);
+                    });
+
+            })
+            .catch(function(error){
+                alert(error);
+            });
+
+    }
+
