@@ -268,6 +268,7 @@ var lancaNovaOs = function(data){
 //função para lançar a OS;
 
 function reloadOsList(){
+
     obterArray()
         .then(function(response){
             gerarList("Em Aberto");

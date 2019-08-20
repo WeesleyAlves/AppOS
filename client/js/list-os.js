@@ -29,6 +29,7 @@ function gerarList(tipo){
         return a.createdAt > b.createdAt ? -1 : a.createdAt < b.createdAt ? 1 : 0;
     });
 
+    
     list.innerHTML ="";
 
     osArray.forEach(osItem => {
