@@ -1,15 +1,16 @@
 .container-geral {
-    max-width: 1000px;
-    min-width: 500px;
+    width: 100%;
+    height: 100%;
     margin: 20px auto;
     text-align: center;
     /* background-color: black; */
+    display: inline-block;
 }
 
 .container {
     background-color: white;
-    min-width: 250px;
-    min-height: 200px;
+    width: 100%;
+    height: 100%;
     margin: 10px 10px ;
     display: block;
     box-shadow: 0px 0px 3px black;
@@ -18,9 +19,9 @@
     }
 
 #container-listOS{
-    max-width: 300px;
-    min-height: 100px;
-    }
+    width: 94%;
+    height: 100%;
+}
 
 #container-list-options{
     /* background-color: aqua; */
@@ -77,10 +78,10 @@
     padding: 0px 5px;
     text-align: left;
     overflow: scroll;  
-    max-height: 450px;
     margin-bottom: 0;
     margin-top: 5px;
     padding-bottom: 0;
+    height: 100%;
 }
 
 #os-list::-webkit-scrollbar{

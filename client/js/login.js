@@ -27,9 +27,12 @@ function logar() {
                     if(user.pass==inputPass.value){
 
                         window.localStorage.setItem('user', user.nome);
+                        
                         if(user.type=="admin"){
                             window.location.replace("./pages/admin.html");
-                        };
+                        }else if(user.type=="tec"){
+                            window.location.replace("./pages/tec.html");
+                        }
                     }else{
                         alert("Usuario ou senha incorretos!");
                     }
