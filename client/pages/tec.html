@@ -37,6 +37,29 @@
                 <div id="button-search" onclick="buscarCliente()">Buscar</div>
             </div>
         </div>
+
+        <div id="container-viewOs" class="container">
+            <div class="btn-return" onclick="closeView('detalhes')">x</div>
+            <div class="label">Detalhes OS</div>
+            <div id="content-OS"></div>
+            <div id="view-os-buttons">
+                <div id="btn-resolve" class="button">Finalizar OS</div>
+            </div>
+        </div>
+
+        <div id="container-fecharOs" class="container">
+            <div class="btn-return" onclick="closeView('fechamento')">x</div>
+            <div id="content-fechamento">
+                <div id="label-fechamento" class="label">Fechamento</div>
+                <div class="text-view">Solução:</div>
+                <textarea name="solucao" id="text-solucao" cols="30" rows="10"></textarea>
+                <div class="text-view">Material Utilizado:</div>
+                <textarea name="material" id="text-material" cols="30" rows="10"></textarea>
+            </div>
+            <div id="fechamento-buttons">
+                <div id="btn-fechar" class="button">Concluir</div>
+            </div>
+        </div>
 </div>
 
 

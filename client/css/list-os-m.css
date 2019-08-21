@@ -24,6 +24,24 @@
     height: 100%;
 }
 
+#container-viewOs{
+    position: absolute;
+    width: 94%;
+    height: 85%;
+    text-align: left;
+    display: none; 
+    /*block */
+}
+
+#container-fecharOs{
+    position: absolute;
+    width: 94%;
+    height: 85%;
+    text-align: left;
+    display: none; 
+    /*block */
+}
+
 #container-list-options{
     /* background-color: aqua; */
     width: 100%;
@@ -82,7 +100,7 @@
     margin-bottom: 0;
     margin-top: 5px;
     padding-bottom: 0;
-    height: 370px;
+    height: 365px;
 }
 
 #os-list::-webkit-scrollbar{
@@ -151,4 +169,90 @@
     position: relative;
     top: 1px;
     right: 1px;
+}
+
+/* ------------ view OS --------------- */
+
+.btn-return{
+    border: 1px solid lightgray;
+    display: inline-block;
+    padding: 5px 10px;
+    padding-top: 1px;
+    margin-top: 5px;
+    margin-left: 5px;
+    float: left;
+}
+
+.btn-return:hover{
+    cursor: pointer;
+}
+
+.btn-return:active{
+    position: relative;
+    top: 1px;
+    right: 1px;
+}
+
+.label{
+    margin: 10px auto;
+    text-align: center;
+    font-size: 14px;
+}
+
+.text-view {
+    margin: 6px;
+    padding-left: 10px;
+    font-size: 16px;
+}
+
+#nomeCliente-view, #login-view{
+    font-weight: 600;
+}
+
+#id-view{
+    font-size: 8px;
+}
+
+#view-os-buttons{
+    text-align: right;
+    padding-right: 20px;
+}
+
+.button{
+    display: inline-block;
+    border: 1px solid lightgray;
+    background-color: cornflowerblue;
+    padding: 5px 10px;
+    font-size: 14px;
+    border-radius: 3px;
+    color: white;
+    font-weight: 500;
+}
+
+.button:active{
+    position: relative;
+    top: 1px;
+    right: 1px;
+}
+
+
+/* ------------- conclusão de OS ------------- */ 
+
+#label-fechamento{
+    margin-bottom: 10px;
+}
+
+.text-view-fechamento {
+    margin: 10px;
+}
+
+textarea{
+    width: 90%;
+    height: 100px;
+    margin: 0px 10px 10px 10px;
+}
+
+#fechamento-buttons{
+    text-align: right;
+    padding-right: 20px;
 }
