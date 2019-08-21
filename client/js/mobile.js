@@ -353,6 +353,7 @@ function fecharOS(idOS) {
     fechamento(idOS, data)
         .then(function(response){
             alert(response);
+            containerFechamento.style.display = "none";
             reloadOsList();
         })
         .catch(function(error){

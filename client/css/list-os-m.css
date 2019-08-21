@@ -193,6 +193,11 @@
     right: 1px;
 }
 
+#content-OS{
+    height: 82%;
+    overflow: auto;
+}
+
 .label{
     margin: 10px auto;
     text-align: center;
